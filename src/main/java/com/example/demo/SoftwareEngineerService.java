@@ -14,12 +14,27 @@ public class SoftwareEngineerService {
     }
 
 
-    public List<SoftwareEngineer> getSoftwareEngineers() {
+    public List<SoftwareEngineer> getAllSoftwareEngineers() {
         return softwareEngineerRepository.findAll();
     }
 
 
+    public void insertSoftwareEngineer(SoftwareEngineer softwareEngineer) {
+        softwareEngineerRepository.save(softwareEngineer);
+    }
 
+    public SoftwareEngineer getSoftwareEngineerById(int id) {
+        return softwareEngineerRepository.findById(id)
+                .orElseThrow(() -> new IllegalStateException(id + " not found"));
+    }
 
-
+    public void deleteSoftwareEngineerById(int id) {
+        boolean exists = softwareEngineerRepository.existsById(id);
+        if (!exists) {
+            throw new IllegalStateException(
+                    id + " not found"
+            );
+        }
+        softwareEngineerRepository.deleteById(id);
+    }
 }
