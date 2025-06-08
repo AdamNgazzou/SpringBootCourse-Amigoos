@@ -5,7 +5,7 @@ GET http://localhost:8080
 GET http://localhost:8080/api/v1/software-engineers
 
 ###
-GET http://localhost:8080/api/v1/software-engineers/5
+GET http://localhost:8080/api/v1/software-engineers/1
 
 ###
 
@@ -13,7 +13,7 @@ POST http://localhost:8080/api/v1/software-engineers
 Content-Type: application/json
 
 {
-  "name": "Adam",
+  "name": "hey",
   "techStack": "sql, databases, java, spring"
 }
 
